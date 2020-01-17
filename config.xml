@@ -3,7 +3,7 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id = "com.unifyed.UTAustin" version   = "7.0.0"
         ios-CFBundleVersion = "1.0.0">
-        <name>UT Austin</name>
+        <name>MyUT Austin</name>
         <description>The University of Texas at Austin Demo Live mobile application</description>
         <author href="http://kryptosmobile.com" email="info@kryptosmobile.com">Unifyed Mobile Team</author>
   <feature name="http://api.phonegap.com/1.0/device"/>
