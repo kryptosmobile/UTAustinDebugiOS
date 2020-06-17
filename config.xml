@@ -133,13 +133,13 @@
   <gap:plugin name="cordova-plugin-device" source="npm"/>
   <gap:plugin name="cordova-plugin-dialogs" source="npm"/>
   <gap:plugin name="cordova-plugin-file-transfer" source="npm" spec="1.6.3"/>
- 
+
   <gap:plugin name="cordova-plugin-geolocation" source="npm" spec="2.4.0"/>
  <gap:plugin name="cordova-plugin-geolocation" source="npm"/>
  <!--> <gap:plugin name="cordova-plugin-geolocation" source="npm" spec="1.0.1"/> -->
   <!-- <gap:plugin name="cordova-plugin-geolocation" source="npm" spec="2.1.0"/>  -->
-  
-  <gap:plugin name="cordova-plugin-inappbrowser" source="npm"/>
+
+  <gap:plugin name="cordova-plugin-inappbrowser" source="npm" spec="3.1.0" />
   <gap:plugin name="cordova-plugin-network-information" source="npm"/>
   <gap:plugin name="cordova-plugin-splashscreen" source="npm"/>
   <gap:plugin name="cordova-plugin-statusbar" source="npm"/>
@@ -174,11 +174,11 @@
   <gap:config-file platform="ios" parent="UIStatusBarHidden" overwrite="true">
     <true/>
   </gap:config-file>
-  
+
   <!--<edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
     <string>Uses location services to share the current location to show the directions</string>
 </edit-config>
-  
+
   <config-file target="*-Info.plist" parent="NSLocationWhenInUseUsageDescription">
     <string>App Uses User's location services to share the current location to show the directions</string>
 </config-file>-->
@@ -200,7 +200,7 @@
          <false />
       </edit-config>
    </platform>
-   
+
      <edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
     <string>App would like to access the current location to show the direction to different campus locations</string>
 </edit-config>
@@ -215,7 +215,7 @@
         <uses-permission name="android.permission.ACCESS_FINE_LOCATION" />
         <uses-permission name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
     </platform>
-    
+
     <platform name="android">
         <resource-file src="google-services.json" target="/google-services.json" />
 </platform>
