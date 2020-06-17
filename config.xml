@@ -49,7 +49,6 @@
   <preference name="KeyboardDisplayRequiresUserAction" value="false"/>
 
   <engine name="ios" spec="latest" />
-  <engine name="android" spec="latest" />
 
   <icon src="icon.png"/>
   <platform name="android">
