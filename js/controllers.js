@@ -31,7 +31,7 @@ angular.module('myApp.controllers', []).
     $.unblockUI();
     };
     iabRef.addEventListener("exit", iabClose);
-  
+
     var loadStop = function(data) {
         hideBlockUi();
 
@@ -51,7 +51,7 @@ angular.module('myApp.controllers', []).
                                 }
                                 window.plugin.email.isServiceAvailable(
                                                                        function (isAvailable) {
-                                                                       
+
                                                                        if(isAvailable){window.plugin.email.open({
                                                                                                                 to: [$rootScope.metadata.reportissueEmail],
                                                                                                                 cc:["support@kryptosmobile.com"],
@@ -69,10 +69,10 @@ angular.module('myApp.controllers', []).
                                                                        else{navigator.notification.alert("Please check your Email configurations",null,"Report Issue Email","OK");}
                                                                        }
                                                                        );
-                                
+
                                 } else {
                                 apprise("This feature is not available on Emulator", {'verify': false, 'textYes': "Ok"}, function (r) {
-                                        
+
                                         });
                                 }
                                 $location.path("/home");
@@ -107,7 +107,7 @@ angular.module('myApp.controllers', []).
                                                                         );
                                  } else {
                                  apprise("This feature is not available on Emulator", {'verify': false, 'textYes': "Ok"}, function (r) {
-                                         
+
                                          });
                                  }
                                  $location.path("/home");
@@ -276,7 +276,7 @@ angular.module('myApp.controllers', []).
                                                 }
                                                 $rootScope.$apply();
                                              }
-                                            
+
                                               });
 
             if(!$rootScope.homeDownloadCompleteAdded) {
@@ -286,12 +286,12 @@ angular.module('myApp.controllers', []).
                     $rootScope.$apply(function () {
                             alert($rootScope.loggedIn);
                             if($rootScope.loggedIn){
-                                $location.path("/app/WhatsUp/WhatsUp");    
+                                $location.path("/app/WhatsUp/WhatsUp");
                             }else{
-                                $location.path("/app/Menu82/Menu82");    
+                                $location.path("/app/Menu82/Menu82");
                             }
                         });*/
-                    $rootScope.$apply(function () {                        
+                    $rootScope.$apply(function () {
                         MyCampusApp.fillRootScopeForHome($rootScope, $sce, tenant, $window, $location, $route, $http,  $scope, $compile);
                     });
                 });
@@ -370,7 +370,7 @@ angular.module('myApp.controllers', []).
                         icon = dockIcons[_i];
                         _results.push(dock.append(icon.markup));
                     }
-                    
+
                     /*var homedata = $("#homedata");
                     homedata.html("");
                     var iconwidth = 64;
@@ -449,7 +449,7 @@ angular.module('myApp.controllers', []).
             if(!$rootScope.frameworkSilentAuth) {
                 $rootScope.frameworkSilentAuth = true;
                 if ($rootScope.loggedin && window.device) {
-                    try {
+                    /*try {
                         var username = $.jStorage.get('username');
                         var password = $.jStorage.get('password');
                         window['authFunction'](username, password, $http, $rootScope, function (data) {
@@ -495,7 +495,7 @@ angular.module('myApp.controllers', []).
                         });
                     }catch(e) {
                         //ignore the exception as its silent authentication
-                    }
+                    }*/
                 }
             }
         }])
@@ -511,11 +511,11 @@ angular.module('myApp.controllers', []).
                                 $rootScope.blackOverlay=false;
                             }*/
                             }
-            $rootScope.myswiperight = function() {    
+            $rootScope.myswiperight = function() {
                 if (!$("body").hasClass("sidebar-left-in")) {
                     $rootScope.toggle("mainSidebar");
                 }
-                            
+
                             /*if($rootScope.blackOverlay == false){
                             $rootScope.blackOverlay=true;
                             }else{
@@ -527,7 +527,7 @@ angular.module('myApp.controllers', []).
                 if ($("body").hasClass("sidebar-left-in")) {
                     $rootScope.toggle("mainSidebar");
                 }
-                
+
                             /*if($rootScope.blackOverlay == false){
                             $rootScope.blackOverlay=true;
                             }else{
@@ -888,9 +888,9 @@ angular.module('myApp.controllers', []).
                 if ($.jStorage.get('tenantInfo').guestApp) {
                     $rootScope.user = null;
 
-                    window.location.href = '#/app/Menu82/Menu82'; 
+                    window.location.href = '#/app/Menu82/Menu82';
                 } else {
-                    window.location.href = '#/app/SignIn279/SignIn279'; 
+                    window.location.href = '#/app/SignIn279/SignIn279';
                 }
             }else{
                 $location.path("/app/Settings2/Settings2Page9");
