@@ -1,5 +1,5 @@
 {
-  "version": 2357,
+  "version": 2406,
   "tenantid": "utaustinnew",
   "mobappid": 7400,
   "appName": "UT Austin New Design",
@@ -19,7 +19,7 @@
   "sidebarScript": null,
   "reportissueEmail": "support@unifyed.com",
   "iconWidth": 70,
-  "apps":
+  "apps": 
   [
     {
       "id": 116737,
@@ -34,7 +34,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "BevoBucks",
@@ -57,7 +57,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "ClassSchedule46",
@@ -83,7 +83,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "InternationalOffice",
@@ -106,7 +106,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "StudyAbroad2",
@@ -128,8 +128,8 @@
       "showInDock": false,
       "showInHome": false,
       "networkrequired": true,
-      "analytics": false,
-      "pages":
+      "analytics": true,
+      "pages": 
       [
         {
           "pageid": "Academics176",
@@ -152,7 +152,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": false,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "Webpageone",
@@ -174,8 +174,8 @@
       "showInDock": false,
       "showInHome": false,
       "networkrequired": true,
-      "analytics": false,
-      "pages":
+      "analytics": true,
+      "pages": 
       [
         {
           "pageid": "Webpagetwo",
@@ -188,7 +188,7 @@
     {
       "id": 158046,
       "name": "BehaviorConcernsAdviceLineBCAL",
-      "displayname": "Behavior Concerns Advice Line (BCAL)",
+      "displayname": "Behavior Concerns & COVID Advice Line (BCCAL)",
       "logo": "utaustinnew/BehaviorConcernsAdviceLineBCAL.png",
       "logourl": "utaustinnew/BehaviorConcernsAdviceLineBCAL.png",
       "description": "Behavior Concerns Advice Line (BCAL)",
@@ -197,14 +197,14 @@
       "showInDock": false,
       "showInHome": false,
       "networkrequired": true,
-      "analytics": false,
-      "pages":
+      "analytics": true,
+      "pages": 
       [
         {
           "pageid": "BehaviorConcernsAdviceLineBCAL",
           "pageTemplate": "<div><\/div>",
           "pageprocessor": "function pageprocessorBehaviorConcernsAdviceLineBCAL(pagedef, $scope, $routeParams, $compile, $http, $rootScope, $sce, $window, $location) {if (window.device) {$.blockUI();}var iabRef = window.open(pagedef.url, \"_blank\", \"location=no,hidden=no,enableViewportScale=yes,clearcache=yes\");var hideBlockUi = function() {$.unblockUI();iabRef.show();        };var iabClose = function(data) {$.unblockUI();iabRef.removeEventListener(\"exit\", iabClose);window.location.href = \"index.html#home\";};iabRef.addEventListener(\"exit\", iabClose);var loadStop = function(data) {hideBlockUi();iabRef.removeEventListener(\"loadstop\", loadStop);};iabRef.addEventListener(\"loadstop\", loadStop);}",
-          "url": "https://besafe.utexas.edu/behavior-concerns-advice-line"
+          "url": "https://safety.utexas.edu/bccal"
         }
       ]
     },
@@ -220,8 +220,8 @@
       "showInDock": false,
       "showInHome": false,
       "networkrequired": true,
-      "analytics": false,
-      "pages":
+      "analytics": true,
+      "pages": 
       [
         {
           "pageid": "LonghornWellnessCenter",
@@ -244,7 +244,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": false,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "Notifications197",
@@ -273,15 +273,38 @@
       "showInDock": false,
       "showInHome": false,
       "networkrequired": true,
-      "analytics": false,
-      "pages":
+      "analytics": true,
+      "pages": 
       [
         {
           "pageid": "DiningBalances",
           "pageTemplate": "<div><\/div>",
           "pageprocessor": "function pageprocessorDiningBalances(pagedef, $scope, $routeParams, $compile, $http, $rootScope, $sce, $window, $location) {\r\n  $scope.api_url = pagedef.mulesoftapiurl;\r\n  $scope.dining_url = pagedef.diningurl;\r\n  try {\r\n    if (!$rootScope.loggedIn) {\r\n      if (window.device) {\r\n        navigator.notification.alert('Please login to access this applet.', null, 'Need Authentication', 'Ok');\r\n        $location.path(\"/app/SignIn279/SignIn279\");\r\n\r\n      } else {\r\n        alert('Please login to access this applet.');\r\n        $location.path(\"/app/SignIn279/SignIn279\");\r\n      }\r\n      return;\r\n    }\r\n  } catch (ex) {\r\n    alert(\"Failed\")\r\n    $location.path(\"/app/SignIn279/SignIn279\");\r\n  }\r\n  var username = $.jStorage.get('username');\r\n  $scope.screenname = username;\r\n  var data1 = $compile($(pagedef.datatemplate))($scope);\r\n  $(\"#appContent\").append(data1);\r\n  console.log(\"Added template\" + $scope.api_url);\r\n  $scope.dataloading = true;\r\n  $scope.accountinfoloaded = false;\r\n  $scope.status = false;\r\n  $.blockUI();\r\n  var money1 = [];\r\n  var planDescription1 = [];\r\n  var money2 = [];\r\n  var planDescription2 = [];\r\n  var money3 = [];\r\n  var planDescription3 = [];\r\n  var plan1 = 0;\r\n  var dollarSignFound = 0;\r\n  var dollarSignFound2 = 0;\r\n\r\n  function plan(arr, obj) {\r\n    for (var i = 0; i < arr.length; i++) {\r\n      if (arr[i] == obj) {\r\n        plan1 = true;\r\n      }\r\n    }\r\n  };\r\n\r\n  function include(arr, obj) {\r\n    for (var i = 0; i < arr.length; i++) {\r\n      if (arr[i] == obj) {\r\n        dollarSignFound = true;\r\n      }\r\n    }\r\n  };\r\n\r\n  function include2(arr, obj) {\r\n    for (var i = 0; i < arr.length; i++) {\r\n      if (arr[i] == obj) {\r\n        dollarSignFound2 = true;\r\n      }\r\n    }\r\n  };\r\n  $scope.isObjectEmpty = function(obj) {\r\n    return Object.keys(obj).length === 0;\r\n  }\r\n  var request = {\r\n      method: 'POST',\r\n      url: $scope.api_url,\r\n      headers: {\r\n        \"licenseKey\": \"UjpwVGpxcTpTOjE1NjQ0MTk2OTcwODY6VTpzZXRoX2tpcm9sYUB1bmlmeWVkLmNvbTpUOjEwOTE5OlA6NzE1\"\r\n      },\r\n      data: {\r\n        // \"token\": window.device ? $rootScope.ticket : $rootScope.user.accessToken\r\n        \"token\": $rootScope.ticket\r\n      }\r\n    }\r\n    //  alert($rootScope.username);\r\n    //  console.log(\"token: \" + $rootScope.user.accessToken);\r\n    //  alert(\"checkpoint 6\");\r\n  $http(request).then(function(response) {\r\n    //  alert(\"checkpoint 6.1\");\r\n    const json = JSON.stringify(response);\r\n    console.log(\"RESPONSE :\" + json);\r\n    var diningInfo = new Object();\r\n    angular.forEach(response.data, function(value, key) {\r\n      //   console.log(value);\t\r\n      if (angular.isString(value)) {\r\n        value = value.replace(/[\\s]/g, '');\r\n      }\r\n      diningInfo[key] = value;\r\n    });\r\n    money1 = (diningInfo[\"#send-data\"][0][\"plans\"][0][\"plan-balance\"]);\r\n    planDescription1 = (diningInfo[\"#send-data\"][0][\"plans\"][0][\"plan-description\"]);\r\n    money2 = (diningInfo[\"#send-data\"][0][\"plans\"][1][\"plan-balance\"]);\r\n    planDescription2 = (diningInfo[\"#send-data\"][0][\"plans\"][1][\"plan-description\"]);\r\n    money3 = (diningInfo[\"#send-data\"][0][\"plans\"][2][\"plan-balance\"]);\r\n    planDescription3 = (diningInfo[\"#send-data\"][0][\"plans\"][2][\"plan-description\"]);\r\n    plan(money1, '$');\r\n    include(money2, '$');\r\n    $scope.dollarAmount1 = money1;\r\n    $scope.moneyFoundPlan1 = dollarSignFound;\r\n    $scope.planDescription1 = planDescription1;\r\n    if (plan1 == false) {\r\n      $scope.dollarAmount1 = \"No plan found\";\r\n      $scope.planDescription1 = \"None\";\r\n    }\r\n    $scope.moneyFoundPlan2 = dollarSignFound;\r\n    $scope.dollarAmount2 = money2;\r\n    $scope.planDescription2 = planDescription2;\r\n    include2(money3, 'Y');\r\n    $scope.moneyFoundPlan3 = dollarSignFound2;\r\n    $scope.dollarAmount3 = money3;\r\n    $scope.planDescription3 = planDescription3;\r\n    $scope.accountinfoloaded = true;\r\n    $scope.dataloading = false;\r\n    $scope.status = true;\r\n    $.unblockUI();\r\n  }, function(response) {\r\n    $scope.error = response.data;\r\n    $scope.dataloading = false;\r\n    $scope.accountinfoloaded = true;\r\n    $.unblockUI();\r\n  });\r\n}",
-          "datatemplate": "<style>\r\n  h4,\r\n  h5,\r\n  h6,\r\n  h1,\r\n  h2,\r\n  h3 {\r\n    margin: 0;\r\n  }\r\n  body {\r\n    /*background: #00a8e0;*/\r\n    /*font-family: 'Inconsolata', monospace;*/\r\n    font-family: \"LibreFrank\", Arial, Helvetica, sans-serif !important;\r\n    margin: 0;\r\n    padding: 0;\r\n    /*background: #2F2C2C;*/\r\n  }\r\n  .body {\r\n    background: #fff;\r\n  }\r\n  h1,\r\n  h2,\r\n  h3,\r\n  h4,\r\n  h5,\r\n  .wrap_mobile_view {\r\n    margin: 0 auto;\r\n    width: 90%;\r\n  }\r\n  .about {\r\n    padding: 3em 0;\r\n  }\r\n  .about-left-info {\r\n    padding: 1em 0;\r\n    /*border-bottom: 1px dashed #44c7f4;*/\r\n    border-bottom: 1px solid #e1ddd2;\r\n  }\r\n  .about-left-info h4 {\r\n    font-size: 1.4em;\r\n    margin: 0;\r\n    color: #212121;\r\n    text-transform: uppercase;\r\n    letter-spacing: 1px;\r\n    font-weight: 500;\r\n  }\r\n  .about-left-info p {\r\n    color: #888;\r\n    font-size: 1.3em;\r\n    margin: 5px 1px 1px 1px;\r\n  }\r\n  .inner_section_wthree {\r\n    margin-top: 2em;\r\n  }\r\n  h3.head {\r\n    text-align: center;\r\n    color: #111;\r\n    font-size: 2.5em;\r\n    letter-spacing: 2px;\r\n    font-weight: 500;\r\n    /*text-shadow: rgba(0, 0, 0, 0.13) 2px 2px 3px;*/\r\n  }\r\n  p.head_para {\r\n    color: #00a8e0;\r\n    text-align: center !important;\r\n    text-transform: uppercase;\r\n    /*letter-spacing: 7px;*/\r\n    letter-spacing: 2px;\r\n  }\r\n  .w3l-grids-about {\r\n    margin-top: 3em;\r\n  }\r\n  .about-left-info a {\r\n    color: #888;\r\n  }\r\n  .about-left-info a:hover {\r\n    color: #00a8e0;\r\n  }\r\n  .logo p{\r\n    margin:0;\r\n    padding:5px;\r\n    font-size:18px;\r\n  }\r\n  #plans {\r\n    padding:5px;\r\n    font-size:18px;\r\n  }\r\n  #element1 {\r\n    display: inline-block;\r\n    padding:5px;\r\n    font-size:18px;\r\n    margin-right: 10px;\r\n    width: 200px;\r\n  }\r\n  #element2 {\r\n    padding:5px;\r\n    font-size:18px;\r\n    display: inline-block;\r\n    width: 250px;\r\n  }\r\n  #element3 {\r\n    padding:5px;\r\n    font-size:18px;\r\n    display: inline-block;\r\n    width: 250px;\r\n  }\r\n  /*@media (max-width: 640px) {}*/\r\n  /*@media (max-width:375px) {}*/\r\n  /*@media (max-width: 360px) {}*/\r\n  /*@media (max-width:320px) {}*/\r\n<\/style>\r\n<div class=\"body\">\r\n  <div class=\"about\">\r\n    <div class=\"wrap_mobile_view\">\r\n      <div class=\"inner_section_wthree\" ng-if=\"accountinfoloaded\">\r\n        <p id=\"plans\">\r\n          <span style=\"font-size:16px\">\r\n            <a href=\"https://utdirect.utexas.edu/bevobucks/addBucks.WBX\" target=\"_blank\">\r\n              <span style=\"color:#bf5700\">Add Bevo Pay\r\n                <\/a>\r\n              <\/span>\r\n            <\/p>\r\n          <br>\r\n        <p id=\"plans\">\r\n          <span style=\"font-size:16px\">\r\n            <a href=\"https://utdirect.utexas.edu/hfis/facultyStaff/addFS.WBX\" target=\"_blank\">\r\n              <span style=\"color:#bf5700\">Add Dine In Dollars\r\n                <\/a>\r\n              <\/span>\r\n            <\/p>\r\n          <br>\r\n        <div id=\"element1\">\r\n          <p>\r\n            <b>Plan Balance:\r\n            <\/b>\r\n          <\/p>\r\n          <p>{{dollarAmount1}}\r\n          <\/p>\r\n        <\/div>\r\n        <div id=\"element2\">\t\t \r\n          <p>\r\n            <b>Plan Description:\r\n            <\/b>\r\n          <\/p>\r\n          <p>{{planDescription1}}\r\n          <\/p>\r\n        <\/div>\r\n        <br>\r\n        <div id=\"element1\" ng-show={{moneyFoundPlan2}}>\r\n          <p>\r\n            <b>Plan Balance:\r\n            <\/b>\r\n          <\/p>\r\n          <p>{{dollarAmount2}}\r\n          <\/p>\r\n          <p>\r\n        <\/div>\r\n        <div id=\"element2\" ng-show={{moneyFoundPlan2}}>\r\n          <\/p>\r\n        <p>\r\n          <b>Plan Description:\r\n          <\/b>\r\n        <\/p>\r\n        <p>{{planDescription2}}\r\n        <\/p>\r\n      <\/div>\r\n      <br>\r\n      <div id=\"element1\" ng-show={{moneyFoundPlan3}}>\r\n        <p>\r\n          <b>Plan Balance:\r\n          <\/b>\r\n        <\/p>\r\n        <p>{{dollarAmount3}}\r\n        <\/p>\r\n        <p>\r\n      <\/div>\t  \r\n      <div id=\"element3\" ng-show={{moneyFoundPlan3}}>\r\n        <\/p>\r\n      <p>\r\n        <b>Plan Description:\r\n        <\/b>\r\n      <\/p>\r\n      <p>{{planDescription3}}\r\n      <\/p>\r\n    <\/div>\r\n  <\/div>\r\n  <!--\t\t\r\n-->\r\n<\/div>\r\n<div style=\"color: #ffffff\" class=\"clearfix\"> \r\n<\/div>\r\n<\/div>\r\n<\/div>\r\n<\/div>\r\n",
+          "datatemplate": "<style>\r\n  h4,\r\n  h5,\r\n  h6,\r\n  h1,\r\n  h2,\r\n  h3 {\r\n    margin: 0;\r\n  }\r\n  \r\n  body {\r\n    /*background: #00a8e0;*/\r\n    /*font-family: 'Inconsolata', monospace;*/\r\n    font-family: \"LibreFrank\", Arial, Helvetica, sans-serif !important;\r\n    margin: 0;\r\n    padding: 0;\r\n    /*background: #2F2C2C;*/\r\n  }\r\n  \r\n  .body {\r\n    background: #fff;\r\n  }\r\n  \r\n  h1,\r\n  h2,\r\n  h3,\r\n  h4,\r\n  h5,\r\n  .wrap_mobile_view {\r\n    margin: 0 auto;\r\n    width: 90%;\r\n  }\r\n  \r\n  .about {\r\n    padding: 3em 0;\r\n  }\r\n  \r\n  .about-left-info {\r\n    padding: 1em 0;\r\n    /*border-bottom: 1px dashed #44c7f4;*/\r\n    border-bottom: 1px solid #e1ddd2;\r\n  }\r\n  \r\n  .about-left-info h4 {\r\n    font-size: 1.4em;\r\n    margin: 0;\r\n    color: #212121;\r\n    text-transform: uppercase;\r\n    letter-spacing: 1px;\r\n    font-weight: 500;\r\n  }\r\n  \r\n  .about-left-info p {\r\n    color: #888;\r\n    font-size: 1.3em;\r\n    margin: 5px 1px 1px 1px;\r\n  }\r\n  \r\n  .inner_section_wthree {\r\n    margin-top: 2em;\r\n  }\r\n  \r\n  h3.head {\r\n    text-align: center;\r\n    color: #111;\r\n    font-size: 2.5em;\r\n    letter-spacing: 2px;\r\n    font-weight: 500;\r\n    /*text-shadow: rgba(0, 0, 0, 0.13) 2px 2px 3px;*/\r\n  }\r\n  \r\n  p.head_para {\r\n    color: #00a8e0;\r\n    text-align: center !important;\r\n    text-transform: uppercase;\r\n    /*letter-spacing: 7px;*/\r\n    letter-spacing: 2px;\r\n  }\r\n  \r\n  .w3l-grids-about {\r\n    margin-top: 3em;\r\n  }\r\n  \r\n  .about-left-info a {\r\n    color: #888;\r\n  }\r\n  \r\n  .about-left-info a:hover {\r\n    color: #00a8e0;\r\n  }\r\n  \r\n  .logo p {\r\n    margin: 0;\r\n    padding: 5px;\r\n    font-size: 18px;\r\n  }\r\n  \r\n  #plans {\r\n    padding: 5px;\r\n    font-size: 18px;\r\n  }\r\n  \r\n  #element1 {\r\n    display: inline-block;\r\n    padding: 5px;\r\n    font-size: 18px;\r\n    margin-right: 10px;\r\n    width: 200px;\r\n  }\r\n  \r\n  #element2 {\r\n    padding: 5px;\r\n    font-size: 18px;\r\n    display: inline-block;\r\n    width: 250px;\r\n  }\r\n  \r\n  #element3 {\r\n    padding: 5px;\r\n    font-size: 18px;\r\n    display: inline-block;\r\n    width: 250px;\r\n  }\r\n  /*@media (max-width: 640px) {}*/\r\n  /*@media (max-width:375px) {}*/\r\n  /*@media (max-width: 360px) {}*/\r\n  /*@media (max-width:320px) {}*/\r\n<\/style>\r\n<div class=\"body\">\r\n  <div class=\"about\">\r\n    <div class=\"wrap_mobile_view\">\r\n      <div class=\"inner_section_wthree\" ng-if=\"accountinfoloaded\">\r\n        <div id=\"element1\">\r\n          <p>\r\n            <b>Plan Balance:\r\n            <\/b>\r\n          <\/p>\r\n          <p>{{dollarAmount1}}\r\n          <\/p>\r\n        <\/div>\r\n        <div id=\"element2\">\r\n          <p>\r\n            <b>Plan Description:\r\n            <\/b>\r\n          <\/p>\r\n          <p>{{planDescription1}}\r\n          <\/p>\r\n        <\/div>\r\n        <br>\r\n        <div id=\"element1\" ng-show={{moneyFoundPlan2}}>\r\n          <p>\r\n            <b>Plan Balance:\r\n            <\/b>\r\n          <\/p>\r\n          <p>{{dollarAmount2}}\r\n          <\/p>\r\n          <p>\r\n        <\/div>\r\n        <div id=\"element2\" ng-show={{moneyFoundPlan2}}>\r\n          <\/p>\r\n          <p>\r\n            <b>Plan Description:\r\n          <\/b>\r\n          <\/p>\r\n          <p>{{planDescription2}}\r\n          <\/p>\r\n        <\/div>\r\n        <br>\r\n        <div id=\"element1\" ng-show={{moneyFoundPlan3}}>\r\n          <p>\r\n            <b>Plan Balance:\r\n          <\/b>\r\n          <\/p>\r\n          <p>{{dollarAmount3}}\r\n          <\/p>\r\n          <p>\r\n        <\/div>\r\n        <div id=\"element3\" ng-show={{moneyFoundPlan3}}>\r\n          <\/p>\r\n          <p>\r\n            <b>Plan Description:\r\n        <\/b>\r\n          <\/p>\r\n          <p>{{planDescription3}}\r\n          <\/p>\r\n        <\/div>\r\n         <p id=\"plans\">\r\n          <span style=\"font-size:16px\">\r\n            <a href=\"https://utdirect.utexas.edu/bevobucks/addBucks.WBX\" target=\"_blank\">\r\n              <span style=\"color:#bf5700\">Add Bevo Pay\r\n                <\/a>\r\n              <\/span>\r\n        <\/p>\r\n        <br>\r\n        <p id=\"plans\">\r\n          <span style=\"font-size:16px\">\r\n            <a href=\"https://utdirect.utexas.edu/hfis/facultyStaff/addFS.WBX\" target=\"_blank\">\r\n              <span style=\"color:#bf5700\">Add Dine In Dollars\r\n                <\/a>\r\n              <\/span>\r\n        <\/p>         \r\n      <\/div>\r\n      <!--\t\t\r\n-->\r\n    <\/div>\r\n    <div style=\"color: #ffffff\" class=\"clearfix\">\r\n    <\/div>\r\n  <\/div>\r\n<\/div>\r\n<\/div>",
           "mulesoftapiurl": "https://kryptos.kryptosmobile.com/gateway/utaustinprodu8/mulediningapi"
+        }
+      ]
+    },
+    {
+      "id": 168732,
+      "name": "CapMetroBusRoutes",
+      "displayname": "CapMetro Bus Routes",
+      "logo": "utaustinnew/CapMetroBusRoutes.png",
+      "logourl": "utaustinnew/CapMetroBusRoutes.png",
+      "description": "CapMetro Bus Routes",
+      "appFeatureType": "Public",
+      "roles": null,
+      "showInDock": false,
+      "showInHome": false,
+      "networkrequired": true,
+      "analytics": false,
+      "pages": 
+      [
+        {
+          "pageid": "CapMetroBusRoutes",
+          "pageTemplate": "<div><\/div>",
+          "pageprocessor": "function pageprocessorCapMetroBusRoutes(pagedef, $scope, $routeParams, $compile, $http, $rootScope, $sce, $window, $location) {if (window.device) {$.blockUI();}var iabRef = window.open(pagedef.url, \"_blank\", \"location=no,hidden=no,enableViewportScale=yes,clearcache=yes\");var hideBlockUi = function() {$.unblockUI();iabRef.show();        };var iabClose = function(data) {$.unblockUI();iabRef.removeEventListener(\"exit\", iabClose);window.location.href = \"index.html#home\";};iabRef.addEventListener(\"exit\", iabClose);var loadStop = function(data) {hideBlockUi();iabRef.removeEventListener(\"loadstop\", loadStop);};iabRef.addEventListener(\"loadstop\", loadStop);}",
+          "url": "https://www.capmetro.org/schedmap/"
         }
       ]
     },
@@ -298,7 +321,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "CanvasCourses",
@@ -412,7 +435,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "GeneralInfo3",
@@ -436,7 +459,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "Menu82",
@@ -459,7 +482,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "MyAccounts",
@@ -519,11 +542,11 @@
       "description": "Maps",
       "appFeatureType": "Public",
       "roles": null,
-      "showInDock": true,
+      "showInDock": false,
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "Maps202",
@@ -546,7 +569,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "HousingDiningLocations",
@@ -570,7 +593,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "Events",
@@ -600,7 +623,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "GraduationHelpDesk",
@@ -623,7 +646,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "RecreationalSports",
@@ -646,7 +669,7 @@
       "showInHome": true,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "Academics135",
@@ -670,7 +693,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "SignIn279",
@@ -696,7 +719,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "CounselingMentalHealthCenter",
@@ -719,7 +742,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "FacilitiesServices",
@@ -742,7 +765,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "HumanResources",
@@ -765,7 +788,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "ServicesforStudentswithDisabilities",
@@ -788,7 +811,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "StudentEmergencyServices",
@@ -811,7 +834,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "StudentVeteranServices",
@@ -834,7 +857,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "UniversityHealthServices",
@@ -857,7 +880,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "WhatsUp",
@@ -929,7 +952,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "Settings452",
@@ -966,7 +989,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "MyUT",
@@ -989,7 +1012,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "SUREWalk",
@@ -1012,7 +1035,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "FinalExamSchedule2",
@@ -1036,7 +1059,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "SchedulePlanner",
@@ -1060,7 +1083,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "CASHCheckAidStatusHere",
@@ -1084,7 +1107,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "InteractiveDegreeAudit2",
@@ -1108,7 +1131,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "RegistrationInformationSheet2",
@@ -1132,7 +1155,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "Admissions65",
@@ -1155,7 +1178,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "FinancialAidScholarships",
@@ -1178,7 +1201,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "HousingDining",
@@ -1201,7 +1224,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "MajorsMinorsCertificates",
@@ -1224,7 +1247,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "Tuition5",
@@ -1247,7 +1270,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "Visit3",
@@ -1260,23 +1283,23 @@
     {
       "id": 105072,
       "name": "Transit5",
-      "displayname": "CapMetro Bus Routes",
+      "displayname": "Protect Texas Together",
       "logo": "utaustinnew/Transit5.png",
       "logourl": "utaustinnew/Transit5.png",
       "description": "Transit",
       "appFeatureType": "Public",
       "roles": null,
-      "showInDock": false,
+      "showInDock": true,
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "Transit5",
           "pageTemplate": "<div><\/div>",
           "pageprocessor": "function pageprocessorTransit5(pagedef, $scope, $routeParams, $compile, $http, $rootScope, $sce, $window, $location) {\r\n   if (window.device) {\r\n    $.blockUI();\r\n    screen.orientation.unlock();\r\n  }\r\n  var iabRef = window.open(pagedef.url, \"_blank\", \"location=no,hidden=no,enableViewportScale=yes,clearcache=yes\");\r\n  var hideBlockUi = function() {\r\n    $.unblockUI();\r\n    iabRef.show();\r\n  };\r\n  var iabClose = function(data) {\r\n    $.unblockUI();\r\n    window.screen.orientation.lock('portrait');\r\n    iabRef.removeEventListener(\"exit\", iabClose);\r\n    //window.location.href = \"index.html#home\";\r\n    window.history.back();\r\n  };\r\n  iabRef.addEventListener(\"exit\", iabClose);\r\n  var loadStop = function(data) {\r\n    hideBlockUi();\r\n    iabRef.removeEventListener(\"loadstop\", loadStop);\r\n  };\r\n  iabRef.addEventListener(\"loadstop\", loadStop);\r\n  /*if (window.device) {\r\n    $.blockUI();\r\n  }\r\n  var iabRef = window.open(pagedef.url, \"_blank\", \"location=no,hidden=yes,enableViewportScale=yes,clearcache=yes\");\r\n  var hideBlockUi = function() {\r\n    $.unblockUI();\r\n    iabRef.show();\r\n  };\r\n  var iabClose = function(data) {\r\n    $.unblockUI();\r\n    iabRef.removeEventListener(\"exit\", iabClose);\r\n    window.history.back();\r\n  };\r\n  iabRef.addEventListener(\"exit\", iabClose);\r\n  var loadStop = function(data) {\r\n    hideBlockUi();\r\n    iabRef.removeEventListener(\"loadstop\", loadStop);\r\n  };\r\n  iabRef.addEventListener(\"loadstop\", loadStop);*/\r\n}",
-          "url": "http://www.capmetro.org/schedules/"
+          "url": "https://protect.utexas.edu/app/"
         }
       ]
     },
@@ -1293,7 +1316,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "Parking4",
@@ -1316,7 +1339,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "PoliceDepartment",
@@ -1339,7 +1362,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "ServiceDesk",
@@ -1362,7 +1385,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "HRSupportSubmitaTicket",
@@ -1385,7 +1408,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "FacilitiesRequestService",
@@ -1408,7 +1431,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "UTPoliceResourcesServices",
@@ -1431,7 +1454,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "ITSAlertsOutages",
@@ -1454,7 +1477,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "ContactUs287",
@@ -1477,7 +1500,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "Courses539",
@@ -1500,7 +1523,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "Account140",
@@ -1523,7 +1546,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "Photos225",
@@ -1546,7 +1569,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "Accounts132",
@@ -1569,7 +1592,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "BusRoutes",
@@ -1592,7 +1615,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "Student183",
@@ -1615,7 +1638,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "Student184",
@@ -1638,7 +1661,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "SURERide",
@@ -1661,7 +1684,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "BlueLightEmergency",
@@ -1685,7 +1708,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "Twitter41",
@@ -1708,7 +1731,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "News599",
@@ -1731,7 +1754,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "Emergency416",
@@ -1754,7 +1777,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "Sports5",
@@ -1777,7 +1800,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "Facebook316",
@@ -1800,7 +1823,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "Twitter272",
@@ -1823,7 +1846,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "Instagram41",
@@ -1846,7 +1869,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "LinkedIn20",
@@ -1869,7 +1892,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "YouTube20",
@@ -1899,7 +1922,7 @@
       "showInHome": true,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "RegistrationStatus",
@@ -1913,7 +1936,7 @@
     {
       "id": 105148,
       "name": "StudentRecords",
-      "displayname": "Safety & Transportation",
+      "displayname": "Health & Safety ",
       "logo": "utaustinnew/StudentRecords.png",
       "logourl": "utaustinnew/StudentRecords.png",
       "description": "Student Records",
@@ -1923,21 +1946,21 @@
       "showInHome": true,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "StudentRecords",
           "pageTemplate": "<div><\/div>",
           "pageprocessor": "function pageprocessorStudentRecords(pagedef, $scope, $routeParams, $compile, $http, $rootScope, $sce, $window, $location) {\r\n  $rootScope.back = function() {\r\n    $rootScope.leftToRight = true;\r\n    $location.path(\"/app/Menu82/Menu82\");\r\n    //window.location.href = \"index.html#app/Menu82/Menu82\";\r\n  }\r\n\r\n  var appnames = pagedef.appnames.split(\",\");\r\n  var results = [];\r\n  for (var i = 0; i < appnames.length; i++) {\r\n    for (var j = 0; j < $rootScope.apps.length; j++) {\r\n      if ($rootScope.apps[j].displayname == appnames[i]) {\r\n        results.push($rootScope.apps[j]);\r\n      }\r\n    }\r\n  }\r\n  $scope.groupapps = results;\r\n  $rootScope.appDisplayName = $rootScope.mobileAppName;\r\n  var data1 = $compile($(pagedef.datatemplate))($scope);\r\n  $(\"#appContent\").append(data1);\r\n\r\n  /*var data2 = '<div class=\"list-group-item proximaFont borderNone listItemCustomPadding ng-scope\" style=\"background-color: #252729 !important;padding:0px 18px 8px 18px;\"><div class=\"hamburgerSearchBox\"><input class=\"form-control needsclick\" placeholder=\"Search Applets\" style=\"background: transparent;border: none;color: #fff;padding: 6px 6px;\" type=\"text\" /><\/div><\/div>';\r\n  var htmlView = $compile($(data2))($scope);\r\n\r\n  $(\"#fixedHeaderContent\").html(htmlView);*/\r\n\r\n  $scope.$on(\"$destroy\", function() {\r\n    $(\"#fixedHeaderContent\").html(\"\");\r\n  });\r\n  $('input:text').focusout(function() {\r\n\r\n    /*  document.getElementsByClassName('footerGroupIcons')[0].style.display = \"block !important\";\r\n     alert(document.getElementsByClassName('footerGroupIcons')[0].style.display);*/\r\n\r\n    $(\"#footerContentContainer\").addClass('footerGroupIcons').removeClass('hideFooter');\r\n    $(\"#bottomPoweredBy\").removeClass('hideFooter');\r\n\r\n  });\r\n\r\n  $('input:text').focusin(function() {\r\n    // document.getElementsByClassName('footerGroupIcons')[0].style.display = \"none !important\";\r\n    // alert(document.getElementsByClassName('footerGroupIcons')[0].style.display);\r\n    //$(\".footerGroupIcons\").css('display', 'none !important');\r\n\r\n    $(\"#footerContentContainer\").addClass('hideFooter').removeClass('footerGroupIcons');\r\n    $(\"#bottomPoweredBy\").addClass('hideFooter');\r\n  })\r\n}",
-          "appnames": "Behavior Concerns Advice Line (BCAL),Campus Shuttles,CapMetro Bus Routes,Emergency Information,Parking,Police Department (UTPD),Report Violence & Misconduct,Safety,SURE Walk,UT Night Rides",
-          "datatemplate": "<style type=\"text/css\">\r\n  .academics-main .navbar-absolute-top div.pull-right div.btn-navbar {\r\n    display: block !important;\r\n  }\r\n  \r\n  .academics-main .footerGroupIcons div div img {\r\n    opacity: 0.4;\r\n  }\r\n  \r\n  .academics-main .footerGroupIcons div div a div {}\r\n  \r\n  .academics-main .divMenu img {\r\n    opacity: 1 !important;\r\n  }\r\n  \r\n  .academics-main.divMenu {\r\n    opacity: 1 !important;\r\n  }\r\n  \r\n  .academics-main .divMenu a div.openSans {}\r\n  \r\n  #fixedHeaderContent {\r\n    display: none;\r\n  }\r\n  \r\n  .academics-main .app-body {\r\n    background-color: #eaebec;\r\n    background: #eaebec;\r\n  }\r\n  \r\n  .academics-main a {\r\n    background-color: #fff !important;\r\n    background: #fff !important;\r\n  }\r\n  \r\n  .academics-main a.list-group-item:hover,\r\n  .academics-main a.list-group-item:active,\r\n  .academics-main a.list-group-item:focus {\r\n    background-color: #a9a9a9 !important;\r\n    background: #a9a9a9 !important;\r\n    color: #fff !important;\r\n  }\r\n  \r\n  .academics-main .navbar-absolute-top {\r\n    border: none !important;\r\n  }\r\n  \r\n  .academics-main .has-navbar-top .app-body {\r\n    padding-top: 50px;\r\n  }\r\n  \r\n  #fixedHeaderContent {\r\n    display: block;\r\n    top: 50px;\r\n  }\r\n  \r\n  .academics-main .transparent {\r\n    background: transparent !important;\r\n  }\r\n  \r\n  .academics-main .group-heading-padding {\r\n    padding: 5px 15px !important;\r\n  }\r\n   .scrollable-content{\r\n    background-image: none !important; \r\n    background: #333f48 !important;\r\n  }\r\n<\/style>\r\n<div class=\"proximaFont academics-main\">\r\n  <div class=\"list-group-item transparent proximaFont group-heading-padding\" style=\"color: #fff\">SAFETY & TRANSPORTATION<\/div>\r\n  <a aria-label=\"{{app.displayname}}\" class=\"list-group-item listItemCustomPadding listitemborderSolid appGroupList\" href=\"#/app/{{app.name}}/{{app.name}}\" ng-repeat=\"app in groupapps\">\r\n    <div class=\"pull-left\"><img class=\"avatar\" style=\"width:36px;\" id=\"logo-{{app.name}}\" src=\"{{app.logo}}\" alt=\"\"><\/div>\r\n    <div style=\"margin-left:9px;display:inline-block !important;margin-top:9px !important;\" class='pull-left fontSize14 proximaSemiBoldFont' ng-if=\"app.displayname == 'WhatsUp'\">What's Up<\/div>\r\n    <div style=\"margin-left:9px;display:inline-block !important;margin-top:9px !important;\" class='pull-left fontSize14 proximaSemiBoldFont' ng-if=\"app.displayname != 'WhatsUp'\">{{app.displayname}}<\/div>\r\n    <div class=\"clearfix\"><\/div>\r\n  <\/a>\r\n<\/div>"
+          "appnames": "Protect Texas Together,Behavior Concerns & COVID Advice Line (BCCAL),Counseling & Mental Health Center,Emergency Information,Police Department (UTPD),Report Violence & Misconduct,Safety,SURE Walk,University Health Services,UT Night Rides",
+          "datatemplate": "<style type=\"text/css\">\r\n  .academics-main .navbar-absolute-top div.pull-right div.btn-navbar {\r\n    display: block !important;\r\n  }\r\n  \r\n  .academics-main .footerGroupIcons div div img {\r\n    opacity: 0.4;\r\n  }\r\n  \r\n  .academics-main .footerGroupIcons div div a div {}\r\n  \r\n  .academics-main .divMenu img {\r\n    opacity: 1 !important;\r\n  }\r\n  \r\n  .academics-main.divMenu {\r\n    opacity: 1 !important;\r\n  }\r\n  \r\n  .academics-main .divMenu a div.openSans {}\r\n  \r\n  #fixedHeaderContent {\r\n    display: none;\r\n  }\r\n  \r\n  .academics-main .app-body {\r\n    background-color: #eaebec;\r\n    background: #eaebec;\r\n  }\r\n  \r\n  .academics-main a {\r\n    background-color: #fff !important;\r\n    background: #fff !important;\r\n  }\r\n  \r\n  .academics-main a.list-group-item:hover,\r\n  .academics-main a.list-group-item:active,\r\n  .academics-main a.list-group-item:focus {\r\n    background-color: #a9a9a9 !important;\r\n    background: #a9a9a9 !important;\r\n    color: #fff !important;\r\n  }\r\n  \r\n  .academics-main .navbar-absolute-top {\r\n    border: none !important;\r\n  }\r\n  \r\n  .academics-main .has-navbar-top .app-body {\r\n    padding-top: 50px;\r\n  }\r\n  \r\n  #fixedHeaderContent {\r\n    display: block;\r\n    top: 50px;\r\n  }\r\n  \r\n  .academics-main .transparent {\r\n    background: transparent !important;\r\n  }\r\n  \r\n  .academics-main .group-heading-padding {\r\n    padding: 5px 15px !important;\r\n  }\r\n  \r\n  .scrollable-content {\r\n    background-image: none !important;\r\n    background: #333f48 !important;\r\n  }\r\n<\/style>\r\n<div class=\"proximaFont academics-main\">\r\n  <div class=\"list-group-item transparent proximaFont group-heading-padding\" style=\"color: #fff\">HEALTH & SAFETY<\/div>\r\n  <a aria-label=\"{{app.displayname}}\" class=\"list-group-item listItemCustomPadding listitemborderSolid appGroupList\" href=\"#/app/{{app.name}}/{{app.name}}\" ng-repeat=\"app in groupapps\">\r\n    <div class=\"pull-left\"><img class=\"avatar\" style=\"width:36px;\" id=\"logo-{{app.name}}\" src=\"{{app.logo}}\" alt=\"\"><\/div>\r\n    <div style=\"margin-left:9px;display:inline-block !important;margin-top:9px !important;\" class='pull-left fontSize14 proximaSemiBoldFont' ng-if=\"app.displayname == 'WhatsUp'\">What's Up<\/div>\r\n    <div style=\"margin-left:9px;display:inline-block !important;margin-top:9px !important;\" class='pull-left fontSize14 proximaSemiBoldFont' ng-if=\"app.displayname != 'WhatsUp'\">{{app.displayname}}<\/div>\r\n    <div class=\"clearfix\"><\/div>\r\n  <\/a>\r\n<\/div>"
         }
       ]
     },
     {
       "id": 105146,
       "name": "Admissions56",
-      "displayname": "Services & Support",
+      "displayname": "Transportation & Services",
       "logo": "utaustinnew/Admissions56.png",
       "logourl": "utaustinnew/Admissions56.png",
       "description": "Admissions",
@@ -1947,14 +1970,14 @@
       "showInHome": true,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "Admissions56",
           "pageTemplate": "<div><\/div>",
           "pageprocessor": "function pageprocessorAdmissions56(pagedef, $scope, $routeParams, $compile, $http, $rootScope, $sce, $window, $location) {\r\n  $rootScope.back = function() {\r\n    $rootScope.leftToRight = true;\r\n    $location.path(\"/app/Menu82/Menu82\");\r\n    //window.location.href = \"index.html#app/Menu82/Menu82\";\r\n  }\r\n\r\n  var appnames = pagedef.appnames.split(\",\");\r\n  var results = [];\r\n  for (var i = 0; i < appnames.length; i++) {\r\n    for (var j = 0; j < $rootScope.apps.length; j++) {\r\n      if ($rootScope.apps[j].displayname == appnames[i]) {\r\n        results.push($rootScope.apps[j]);\r\n      }\r\n    }\r\n  }\r\n  $scope.groupapps = results;\r\n  $rootScope.appDisplayName = $rootScope.mobileAppName;\r\n  var data1 = $compile($(pagedef.datatemplate))($scope);\r\n  $(\"#appContent\").append(data1);\r\n\r\n  $scope.changeNotificationIcon = function() {\r\n    if ($rootScope.notificationFeeds) {\r\n      setTimeout(function() {\r\n        /*start for icon badge*/\r\n        var msgCount = \"!\";\r\n        var badgeText = '<span class=\"badge\" style=\"position:absolute;left:37px;top:5px;font-size:16px;background:yellow;color:red;font-weight: bolder\">' + msgCount + '<\\/span>';\r\n        //$(\"a[href$='#app/Admissions56/Admissions56'] img\").after(badgeText);\r\n        //$(\"a[href$='#app/Notifications197/Notifications197'] img\").after(badgeText);\r\n        $(\"#logo-Notifications197\").after(badgeText);\r\n      }, 400);\r\n    }\r\n  }\r\n  \r\n  /*var data2 = '<div class=\"list-group-item proximaFont borderNone listItemCustomPadding ng-scope\" style=\"background-color: #252729 !important;padding:0px 18px 8px 18px;\"><div class=\"hamburgerSearchBox\"><input class=\"form-control needsclick\" placeholder=\"Search Applets\" style=\"background: transparent;border: none;color: #fff;padding: 6px 6px;\" type=\"text\" /><\/div><\/div>';\r\n  var htmlView = $compile($(data2))($scope);\r\n\r\n  $(\"#fixedHeaderContent\").html(htmlView);*/\r\n\r\n  $scope.$on(\"$destroy\", function() {\r\n    $(\"#fixedHeaderContent\").html(\"\");\r\n  });\r\n  $('input:text').focusout(function() {\r\n\r\n    /*  document.getElementsByClassName('footerGroupIcons')[0].style.display = \"block !important\";\r\n     alert(document.getElementsByClassName('footerGroupIcons')[0].style.display);*/\r\n\r\n    $(\"#footerContentContainer\").addClass('footerGroupIcons').removeClass('hideFooter');\r\n    $(\"#bottomPoweredBy\").removeClass('hideFooter');\r\n\r\n  });\r\n\r\n  $('input:text').focusin(function() {\r\n    // document.getElementsByClassName('footerGroupIcons')[0].style.display = \"none !important\";\r\n    // alert(document.getElementsByClassName('footerGroupIcons')[0].style.display);\r\n    //$(\".footerGroupIcons\").css('display', 'none !important');\r\n\r\n    $(\"#footerContentContainer\").addClass('hideFooter').removeClass('footerGroupIcons');\r\n    $(\"#bottomPoweredBy\").addClass('hideFooter');\r\n  });\r\n  $scope.changeNotificationIcon();\r\n}",
-          "appnames": "Notifications,Contact Service Desk,Counseling & Mental Health Center,Facilities Services,Human Resources,ITS Customer Support, Longhorn Wellness Center,Services for Students with Disabilities,Student Emergency Services,Student Veteran Services,Texas Global,University Health Services,Device Information",
-          "datatemplate": "<style type=\"text/css\">\r\n  .academics-main .navbar-absolute-top div.pull-right div.btn-navbar {\r\n    display: block !important;\r\n  }\r\n  \r\n  .academics-main .footerGroupIcons div div img {\r\n    opacity: 0.4;\r\n  }\r\n  \r\n  .academics-main .footerGroupIcons div div a div {}\r\n  \r\n  .academics-main .divMenu img {\r\n    opacity: 1 !important;\r\n  }\r\n  \r\n  .academics-main.divMenu {\r\n    opacity: 1 !important;\r\n  }\r\n  \r\n  .academics-main .divMenu a div.openSans {}\r\n  \r\n  #fixedHeaderContent {\r\n    display: none;\r\n  }\r\n  \r\n  .academics-main .app-body {\r\n    background-color: #eaebec;\r\n    background: #eaebec;\r\n  }\r\n  \r\n  .academics-main a {\r\n    background-color: #fff !important;\r\n    background: #fff !important;\r\n  }\r\n  \r\n  .academics-main a.list-group-item:hover,\r\n  .academics-main a.list-group-item:active,\r\n  .academics-main a.list-group-item:focus {\r\n    background-color: #a9a9a9 !important;\r\n    background: #a9a9a9 !important;\r\n    color: #fff !important;\r\n  }\r\n  \r\n  .academics-main .navbar-absolute-top {\r\n    border: none !important;\r\n  }\r\n  \r\n  .academics-main .has-navbar-top .app-body {\r\n    padding-top: 50px;\r\n  }\r\n  \r\n  #fixedHeaderContent {\r\n    display: block;\r\n    top: 50px;\r\n  }\r\n  \r\n  .academics-main .transparent {\r\n    background: transparent !important;\r\n  }\r\n  \r\n  .academics-main .group-heading-padding {\r\n    padding: 5px 15px !important;\r\n  }\r\n  .scrollable-content{\r\n    background-image: none !important; \r\n    background: #333f48 !important;\r\n  }\r\n<\/style>\r\n<div class=\"proximaFont academics-main\">\r\n  <div class=\"list-group-item transparent proximaFont group-heading-padding\" style=\"color: #fff\">SERVICES & SUPPORT<\/div>\r\n  <a aria-label=\"{{app.displayname}}\" class=\"list-group-item listItemCustomPadding listitemborderSolid appGroupList\" href=\"#/app/{{app.name}}/{{app.name}}\" ng-repeat=\"app in groupapps\">\r\n    <div class=\"pull-left\"><img class=\"avatar\" style=\"width:36px;\" id=\"logo-{{app.name}}\" src=\"{{app.logo}}\" alt=\"\"><\/div>\r\n    <div style=\"margin-left:9px;display:inline-block !important;margin-top:9px !important;\" class='pull-left fontSize14 proximaSemiBoldFont' ng-if=\"app.displayname == 'WhatsUp'\">What's Up<\/div>\r\n    <div style=\"margin-left:9px;display:inline-block !important;margin-top:9px !important;\" class='pull-left fontSize14 proximaSemiBoldFont' ng-if=\"app.displayname != 'WhatsUp'\">{{app.displayname}}<\/div>\r\n    <div class=\"clearfix\"><\/div>\r\n  <\/a>\r\n<\/div>"
+          "appnames": "Notifications,Campus Shuttles,CapMetro Bus Routes,Contact Service Desk,Device Information,Facilities Services,Human Resources,Parking,ITS Customer Support, Longhorn Wellness Center,Services for Students with Disabilities,Student Emergency Services,Student Veteran Services,Texas Global",
+          "datatemplate": "<style type=\"text/css\">\r\n  .academics-main .navbar-absolute-top div.pull-right div.btn-navbar {\r\n    display: block !important;\r\n  }\r\n  \r\n  .academics-main .footerGroupIcons div div img {\r\n    opacity: 0.4;\r\n  }\r\n  \r\n  .academics-main .footerGroupIcons div div a div {}\r\n  \r\n  .academics-main .divMenu img {\r\n    opacity: 1 !important;\r\n  }\r\n  \r\n  .academics-main.divMenu {\r\n    opacity: 1 !important;\r\n  }\r\n  \r\n  .academics-main .divMenu a div.openSans {}\r\n  \r\n  #fixedHeaderContent {\r\n    display: none;\r\n  }\r\n  \r\n  .academics-main .app-body {\r\n    background-color: #eaebec;\r\n    background: #eaebec;\r\n  }\r\n  \r\n  .academics-main a {\r\n    background-color: #fff !important;\r\n    background: #fff !important;\r\n  }\r\n  \r\n  .academics-main a.list-group-item:hover,\r\n  .academics-main a.list-group-item:active,\r\n  .academics-main a.list-group-item:focus {\r\n    background-color: #a9a9a9 !important;\r\n    background: #a9a9a9 !important;\r\n    color: #fff !important;\r\n  }\r\n  \r\n  .academics-main .navbar-absolute-top {\r\n    border: none !important;\r\n  }\r\n  \r\n  .academics-main .has-navbar-top .app-body {\r\n    padding-top: 50px;\r\n  }\r\n  \r\n  #fixedHeaderContent {\r\n    display: block;\r\n    top: 50px;\r\n  }\r\n  \r\n  .academics-main .transparent {\r\n    background: transparent !important;\r\n  }\r\n  \r\n  .academics-main .group-heading-padding {\r\n    padding: 5px 15px !important;\r\n  }\r\n  \r\n  .scrollable-content {\r\n    background-image: none !important;\r\n    background: #333f48 !important;\r\n  }\r\n<\/style>\r\n<div class=\"proximaFont academics-main\">\r\n  <div class=\"list-group-item transparent proximaFont group-heading-padding\" style=\"color: #fff\">TRANSPORTATION & SERVICES<\/div>\r\n  <a aria-label=\"{{app.displayname}}\" class=\"list-group-item listItemCustomPadding listitemborderSolid appGroupList\" href=\"#/app/{{app.name}}/{{app.name}}\" ng-repeat=\"app in groupapps\">\r\n    <div class=\"pull-left\"><img class=\"avatar\" style=\"width:36px;\" id=\"logo-{{app.name}}\" src=\"{{app.logo}}\" alt=\"\"><\/div>\r\n    <div style=\"margin-left:9px;display:inline-block !important;margin-top:9px !important;\" class='pull-left fontSize14 proximaSemiBoldFont' ng-if=\"app.displayname == 'WhatsUp'\">What's Up<\/div>\r\n    <div style=\"margin-left:9px;display:inline-block !important;margin-top:9px !important;\" class='pull-left fontSize14 proximaSemiBoldFont' ng-if=\"app.displayname != 'WhatsUp'\">{{app.displayname}}<\/div>\r\n    <div class=\"clearfix\"><\/div>\r\n  <\/a>\r\n<\/div>"
         }
       ]
     },
@@ -1971,7 +1994,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "Alertus",
@@ -1997,7 +2020,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "ContactInfo2",
@@ -2021,7 +2044,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "GeneralInfo2",
@@ -2045,13 +2068,13 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "PrayerRequest",
           "pageTemplate": "<div><\/div>",
           "pageprocessor": "function pageprocessorPrayerRequest(pagedef, $scope, $routeParams,\r\n  $compile, $http, $rootScope, $sce, $window, $location) {\r\n\r\n  $rootScope.back = function() {\r\n    $rootScope.leftToRight = true;\r\n    //$location.path(\"/app/GuestApps/GuestApps\");\r\n    //window.location.href = \"index.html#app/Menu82/Menu82\";\r\n    $window.history.back();\r\n  }\r\n\r\n  var data1 = $compile($(pagedef.datatemplate))($scope);\r\n  $(\"#appContent\").append(data1);\r\n  $scope.textname = \"\";\r\n  $scope.textemail = \"\";\r\n  $scope.textprayer = \"\";\r\n  $scope.sendText = function() {\r\n\r\n\r\n    if ($scope.textname != \"\" || $scope.textname == undefined) {\r\n      var nameContent = $scope.textname;\r\n    } else {\r\n      var nameContent = \"Name\"\r\n      navigator.notification.alert(\"Please fill up the Name\",\r\n        null, \"Alert\", \"OK\")\r\n      return;\r\n    }\r\n    if ($scope.textemail != \"\" || $scope.textname == undefined) {\r\n      var emailContent = $scope.textemail;\r\n    } else {\r\n      var emailContent = \"Email\"\r\n      navigator.notification.alert(\r\n        \"Please add your email address\", null, \"Alert\",\r\n        \"OK\")\r\n      return;\r\n    }\r\n\r\n    if ($scope.textprayer != \"\") {\r\n      var prayerContent = $scope.textprayer;\r\n    } else {\r\n      var prayerContent = \"Prayer request\"\r\n      navigator.notification.alert(\"Please fill up the Feedback\",\r\n        null, \"Alert\", \"OK\")\r\n      return;\r\n    }\r\n\r\n    $.blockUI({\r\n      message: '<div id=\"floatingBarsG\"><div class=\"blockG\" id=\"rotateG_01\"><\/div><div class=\"blockG\" id=\"rotateG_02\"><\/div><div class=\"blockG\" id=\"rotateG_03\"><\/div><div class=\"blockG\" id=\"rotateG_04\"><\/div><div class=\"blockG\" id=\"rotateG_05\"><\/div><div class=\"blockG\" id=\"rotateG_06\"><\/div><div class=\"blockG\" id=\"rotateG_07\"><\/div><div class=\"blockG\" id=\"rotateG_08\"><\/div><\/div><div><\/div>'\r\n    });\r\n    emailBody = \"\";\r\n    emailBody = \"<html><body>\";\r\n    emailBody += \"<div>Details: <br>Name: \" + nameContent +\r\n      \"<br>Email: \" + emailContent + \"<\/div><br/>\";\r\n    emailBody += \"<div>\" + prayerContent + \"<\/div><br/>\";\r\n    emailBody += \"<\/body><\/html>\";\r\n    var emailData = {\r\n      'to': 'help@its.utexas.edu',\r\n      'subject': 'Feedback reported for UT Austin Mobile App',\r\n      'body': emailBody,\r\n      'from': 'help@its.utexas.edu'\r\n    };\r\n    //alert(JSON.stringify(emailData));\r\n\r\n    var xhr = $.ajax({\r\n      url: \"https://kryptos.kryptosmobile.com/gateway/CEAI/kryptosemailsender\",\r\n      contentType: 'application/json',\r\n      type: \"POST\",\r\n      headers: {\r\n        'licenseKey': 'UjpIaWVDVzpTOjE0NDk0ODk2MzUxMzE6VTpha0BjYW1wdXNlYWkub3JnOlQ6NDpQOjI4Ng=='\r\n      },\r\n      data: JSON.stringify(emailData),\r\n      success: function(data) {\r\n        $.unblockUI();\r\n        //alert(JSON.stringify(data));\r\n        if (data.response == \"Successful\") {\r\n          $.unblockUI();\r\n          navigator.notification.alert(\r\n            \"Your request has been submitted \",\r\n            null, 'Thank you!', 'Ok');\r\n          $scope.textname = \"\";\r\n          $scope.textemail = \"\";\r\n          $scope.textprayer = \"\";\r\n          $scope.$apply();\r\n\r\n        }\r\n      },\r\n      error: function(err) {\r\n        alert(JSON.stringify(err));\r\n      }\r\n    });\r\n  }\r\n\r\n}",
-          "datatemplate": "<style type=\"text/css\">\r\n  #footerContentContainer {\r\n    display: none !important;\r\n  }\r\n  \r\n  #fixedHeaderContent {\r\n    display: none;\r\n  }\r\n  \r\n  .footerGroupIcons div div img {\r\n    -webkit-filter: grayscale(100%);\r\n    /* Chrome, Safari, Opera */\r\n    filter: grayscale(100%);\r\n  }\r\n  \r\n  .footerGroupIcons div div a div {\r\n    -webkit-filter: grayscale(100%);\r\n    /* Chrome, Safari, Opera */\r\n    filter: grayscale(100%);\r\n  }\r\n  \r\n  .textBox {\r\n    overflow: auto;\r\n    outline: none;\r\n    font-size: 18px;\r\n    width: 100%;\r\n    resize: none;\r\n    border: 1px solid #f0ad4e;\r\n  }\r\n  \r\n  .app-body {\r\n    background-color: #efefef;\r\n    background: #efefef;\r\n  }\r\n<\/style>\r\n\r\n<div style=\"padding:20px;\">\r\n  <h style=\"font-size:19px; color: #fff; font-weight: bold;\">If you have feedback on our app, please submit it here. It will be reviewed by UT Austin staff and used to improve your experience.<\/h>\r\n  <\/br>\r\n  <h style=\"font-size:19px; color: #fff; font-weight: bold;\">Call us at <a style=\"font-size:19px; color: #fff; font-weight: bold;\" href=\"tel:512-475-9400\"> 512-475-9400<\/a><\/h>\r\n  <br>\r\n  <br>\r\n  <div>\r\n    <input class=\"form-control input-lg\" type=\"text\" name=\"input\" ng-model=\"textname\" placeholder=\"Name\" required>\r\n  <\/div>\r\n  <br>\r\n  <div>\r\n    <input class=\"form-control input-lg\" type=\"email\" name=\"input\" ng-model=\"textemail\" placeholder=\"Email\" required>\r\n  <\/div>\r\n  <br>\r\n  <div>\r\n    <textarea class=\"textBox\" rows=\"8\" cols=\"50\" ng-model=\"textprayer\" placeholder=\"&nbsp;&nbsp;Feedback\"><\/textarea>\r\n  <\/div>\r\n  <br>\r\n  <br>\r\n  <div class=\"btn btn-primary btn-block\" ng-click=\"sendText()\">Submit<\/div>\r\n<\/div>\r\n<br>\r\n<br>\r\n<br>\r\n<br>"
+          "datatemplate": "<style type=\"text/css\">\r\n  #footerContentContainer {\r\n    display: none !important;\r\n  }\r\n  \r\n  #fixedHeaderContent {\r\n    display: none;\r\n  }\r\n  \r\n  .footerGroupIcons div div img {\r\n    -webkit-filter: grayscale(100%);\r\n    /* Chrome, Safari, Opera */\r\n    filter: grayscale(100%);\r\n  }\r\n  \r\n  .footerGroupIcons div div a div {\r\n    -webkit-filter: grayscale(100%);\r\n    /* Chrome, Safari, Opera */\r\n    filter: grayscale(100%);\r\n  }\r\n  \r\n  .textBox {\r\n    overflow: auto;\r\n    outline: none;\r\n    font-size: 18px;\r\n    width: 100%;\r\n    resize: none;\r\n    border: 1px solid #f0ad4e;\r\n  }\r\n  \r\n  .app-body {\r\n    background-color: #efefef;\r\n    background: #efefef;\r\n  }\r\n<\/style>\r\n\r\n<div style=\"padding:20px;\">\r\n  <h style=\"font-size:19px; color: #000000; font-weight: bold;\">If you have feedback on our app, please submit it here. It will be reviewed by UT Austin staff and used to improve your experience.<\/h>\r\n  <\/br>\r\n  <\/br>\r\n  <h style=\"font-size:19px; color: #000000; font-weight: bold;\">Call us at <a style=\"font-size:19px; color: #000000; font-weight: bold;\" href=\"tel:512-475-9400\"> 512-475-9400<\/a><\/h>\r\n  <br>\r\n  <br>\r\n  <div>\r\n    <input class=\"form-control input-lg\" type=\"text\" name=\"input\" ng-model=\"textname\" placeholder=\"Name\" required>\r\n  <\/div>\r\n  <br>\r\n  <div>\r\n    <input class=\"form-control input-lg\" type=\"email\" name=\"input\" ng-model=\"textemail\" placeholder=\"Email\" required>\r\n  <\/div>\r\n  <br>\r\n  <div>\r\n    <textarea class=\"textBox\" rows=\"8\" cols=\"50\" ng-model=\"textprayer\" placeholder=\"&nbsp;&nbsp;Feedback\"><\/textarea>\r\n  <\/div>\r\n  <br>\r\n  <br>\r\n  <div class=\"btn btn-primary btn-block\" ng-click=\"sendText()\">Submit<\/div>\r\n<\/div>\r\n<br>\r\n<br>\r\n<br>\r\n<br>"
         }
       ]
     },
@@ -2068,7 +2091,7 @@
       "showInHome": false,
       "networkrequired": true,
       "analytics": true,
-      "pages":
+      "pages": 
       [
         {
           "pageid": "HornsLink",
@@ -2079,7 +2102,7 @@
       ]
     }
   ],
-  "pages":
+  "pages": 
   [
   ]
 }
