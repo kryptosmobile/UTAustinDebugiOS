@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
     <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id = "com.unifyed.UTAustin" version   = "7.0.1"
+        id = "com.unifyed.UTAustin" version   = "7.0.2"
         ios-CFBundleVersion = "1.0.0">
         <name>MyUT Austin</name>
         <description>The University of Texas at Austin Demo Live mobile application</description>
@@ -38,7 +38,7 @@
   <preference name="android-minSdkVersion" value="23"/>
   <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. -->
 
-  <preference name="android-targetSdkVersion" value="28"/>
+  <preference name="android-targetSdkVersion" value="29"/>
 
   <preference name="android-installLocation" value="auto"/>
   <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
